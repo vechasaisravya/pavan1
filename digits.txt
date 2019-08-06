@@ -37,7 +37,7 @@ public class Solution {
         int result = superDigit(k, n);
 
         System.out.println(result);
-
+System.out.println("sravya");
         scanner.close();
     }
 }
