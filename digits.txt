@@ -1,0 +1,43 @@
+import java.io.*;
+import java.math.*;
+import java.security.*;
+import java.text.*;
+import java.util.*;
+import java.util.concurrent.*;
+import java.util.regex.*;
+
+public class Solution {
+
+    // Complete the superDigit function below.
+    static int superDigit(String n, int k) {
+            long sum=0;
+            int si=n.length();
+        for(int i=0;i<si;i++)
+            {
+                sum+=Integer.parseInt(Character.toString(n.charAt(i)));
+            }
+            sum=sum*k;
+            if(sum<10&&sum>-1)
+                    return (int)sum;
+
+                return superDigit(Long.toString(sum),1);
+
+
+    }
+
+    private static final Scanner scanner = new Scanner(System.in);
+
+    public static void main(String[] args) throws IOException {
+
+
+    
+
+        String k=scanner.next();
+        int n=scanner.nextInt();
+        int result = superDigit(k, n);
+
+        System.out.println(result);
+
+        scanner.close();
+    }
+}
